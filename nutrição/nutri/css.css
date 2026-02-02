@@ -1,0 +1,237 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FUNDO COM IMAGEM E CENTRALIZAÇÃO */
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url("../fotos/Captura de tela 2026-01-06 183843.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* ESTE BLOCO COLOCA TUDO NO CENTRO */
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    position: relative;
+    overflow: hidden;
+    /* Evita barras de rolagem desnecessárias */
+}
+
+/* OVERLAY ESCURO */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 0;
+}
+
+/* CAIXA DO PAINEL */
+.container-painel {
+    position: relative;
+    z-index: 1;
+    background: rgba(123, 141, 114, 0.25);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 420px;
+    /* Mesma largura da caixa de login */
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* LISTA DE BOTÕES */
+.menu-painel {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.menu-painel li {
+    margin-bottom: 15px;
+    /* Espaço entre um botão e outro */
+}
+
+/* ESTILO DO BOTÃO (LINK) */
+.btn-menu {
+    display: block;
+    width: 100%;
+    background: #7b8d72;
+    /* Mesma cor verde do botão 'Entrar' */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+.btn-menu:hover {
+    background: #ffffff;
+    /* Fica branco */
+    color: #7b8d72;
+    /* Texto fica verde */
+    transform: translateY(-3px);
+    /* Sobe um pouquinho */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* BOTÃO DE SAIR (MAIS DISCRETO) */
+.link-sair {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.link-sair:hover {
+    border-bottom: 1px solid #ffffff;
+    opacity: 0.8;
+}
+
+/* CONTAINER DAS AVALIAÇÕES */
+.lista-avaliacoes {
+    max-height: 380px;
+    /* Limita a altura para não esticar o quadrado */
+    overflow-y: auto;
+    /* Cria a barra de rolagem */
+    padding-right: 10px;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* ESTILO DO CARD DE MENSAGEM */
+.card-comentario {
+    background: rgba(255, 255, 255, 0.08);
+    /* Fundo sutil */
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.card-comentario:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* CABEÇALHO DO CARD (Nome e Nota) */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.card-header strong {
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.nota-tag {
+    background: #7b8d72;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.texto-comentario {
+    color: #e0e0e0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ESTILO DA BARRA DE ROLAGEM (Scrollbar) */
+.lista-avaliacoes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.lista-avaliacoes::-webkit-scrollbar-thumb {
+    background: rgba(123, 141, 114, 0.5);
+    border-radius: 10px;
+}
+
+.lista-avaliacoes::-webkit-scrollbar-thumb:hover {
+    background: #7b8d72;
+}
+
+.footer-avaliacoes {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* CARD DE AGENDAMENTO */
+.card-agendamento {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card-agendamento:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.agenda-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.agenda-info strong {
+    color: #ffffff;
+    font-size: 16px;
+    max-width: 60%;
+}
+
+.servico-tag {
+    background: #7b8d72;
+    color: white;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.agenda-detalhes {
+    display: flex;
+    gap: 15px;
+    color: #e0e0e0;
+    font-size: 13px;
+}
+
+.agenda-detalhes span {
+    display: flex;
+    align-items: center;
+}
+
+/* Reutilizando o scrollbar das avaliações */
+.lista-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 8px;
+}

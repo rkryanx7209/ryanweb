@@ -1,0 +1,284 @@
+/* 1. RESET E CONFIGURAÇÕES GERAIS DO CORPO*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-image: url(../fotos/Captura\ de\ tela\ 2026-01-06\ 183843.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* 2. NAVEGAÇÃO*/
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
+    background: rgba(123, 141, 114, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+.menu a:hover {
+    opacity: 1;
+}
+
+/* Botão de Área da Nutricionista */
+.btn-login {
+    color: #ffffff !important;
+    padding: 10px 22px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+/*3. CONFIGURAÇÕES DAS SEÇÕES*/
+.secao {
+    min-height: 100vh;
+    padding: 120px 8%;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Camada escura por cima da foto de fundo para dar leitura ao texto */
+.secao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+/* 4. SEÇÃO HOME */
+#home.secao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home .conteudo {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#home p {
+    margin: 20px auto 0;
+    text-align: justify;
+    /* Alinhamento do texto da home */
+}
+
+/* 5. SEÇÃO SOBRE */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.sobre-texto {
+    max-width: 520px;
+}
+
+.card-foto img {
+    width: 340px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/*6. FORMULÁRIOS (AGENDAMENTO E AVALIAÇÃO) */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.form-estilizado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-grupo {
+    display: flex;
+    gap: 15px;
+}
+
+.input-grupo input,
+.input-grupo select {
+    flex: 1;
+}
+
+.form-estilizado input,
+.form-estilizado textarea,
+.form-estilizado select {
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+.form-estilizado textarea {
+    resize: none;
+    height: 120px;
+}
+
+.form-estilizado button {
+    background: #7b8d72;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.form-estilizado button:hover {
+    background: #dbebd3;
+    color: #7b8d72;
+    transform: translateY(-2px);
+}
+
+/*  7. REDES SOCIAIS E CONTATO */
+.social-descricao {
+    max-width: 600px;
+    margin: 20px auto 40px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.redes-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    font-size: 40px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #dbebd3;
+    transform: scale(1.2);
+}
+
+.social-wrapper p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 8. RODAPÉ (FOOTER) */
+.footer {
+    background: #7b8d72;
+    color: #fff;
+    text-align: center;
+    padding: 40px 10px;
+}
+
+/* 9. RESPONSIVIDADE*/
+
+/* Ajustes Gerais para Telas Médias (900px a 992px) */
+@media (max-width: 992px) {
+    .secao {
+        padding: 80px 5%;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-foto img {
+        width: 250px;
+    }
+}
+
+/* Ajustes para Celulares (Até 768px) */
+@media (max-width: 768px) {
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .input-grupo {
+        flex-direction: column;
+    }
+
+    /* Campos do formulário ficam um embaixo do outro */
+    .form-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/* Ajustes para Celulares Pequenos (Até 480px) */
+@media (max-width: 480px) {
+    .menu a {
+        font-size: 11px;
+    }
+
+    .secao {
+        padding: 60px 20px;
+    }
+
+    .social-icon {
+        font-size: 35px;
+    }
+}
+
+/* Garante que mídias não quebrem o layout */
+img,
+video,
+canvas {
+    max-width: 100%;
+    height: auto;
+}
